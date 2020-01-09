@@ -12,7 +12,7 @@ import {
 import './styles.css'
 
 const icons = {
-    [CLOUD]: "cloudy",
+    [CLOUD]: "cloud",
     [RAIN]: "rain",
     [SUN]: "day-sunny",
     [SNOW]: "snow",
