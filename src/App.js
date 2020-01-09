@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
-import WeatherLocation from './components/WeatherLocation';
+import LocationList from './components/LocationList';
 
-function App() {
+class App extends Component {
+  render() {
   return (
     <div className="App">
-      <WeatherLocation></WeatherLocation>
+      <LocationList ></LocationList>
     </div>
   );
+ }
 }
 
 export default App;

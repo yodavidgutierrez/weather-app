@@ -4,7 +4,6 @@ import WeatherExtraInfo from './WeatherExtraInfo';
 import WeatherTemperature from './WeatherTemperature';
 import {
     CLOUD,
-    CLOUDY,
     SUN,
     RAIN,
     SNOW,
