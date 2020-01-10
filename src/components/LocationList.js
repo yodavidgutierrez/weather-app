@@ -5,14 +5,14 @@ import './styles.css';
 
 
 const LocationList = ({cities, onSelectedLocation}) => {
-    const handleWeatherLocationClick = city =>{
+    function handleWeatherLocationClick(city) {
         console.log("handleWeatherLocationClick");
         onSelectedLocation(city)
     };
     const strToComponents = cities => (
-        cities.map((city,index) => (
+        cities.map(city => (
         <WeatherLocation key={city} city={city}
-             onWeatherLocationClick = {() => handleWeatherLocationClick(city)}>
+             onWeatherLocationClick = {handleWeatherLocationClick}>
         </WeatherLocation>))
     );
    return  (<div className="locationList">
