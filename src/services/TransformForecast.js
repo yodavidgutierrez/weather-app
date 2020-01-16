@@ -1,6 +1,7 @@
 import moment from 'moment';
 import 'moment/locale/es';
 import transformWeather from './tranformWeather';
+
 const transformForecast = data => (
     data.list.filter(item => (
         moment.unix(item.dt).utc().hour() === 6 ||

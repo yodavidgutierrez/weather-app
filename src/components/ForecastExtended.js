@@ -2,11 +2,8 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import ForecastItem from './ForecastItem';
 import {url_base_forecast, api_key} from './../constants/api_url';
-import WeatherData from './WeatherLocation/WeatherData';
-import trasnformForecast from './../services/TransformForecast';
 import './styles.css';
 import transformForecast from './../services/TransformForecast';
-import { weekdays } from 'moment';
 
 class ForecastExtended extends Component {
     constructor(){
@@ -25,14 +22,10 @@ class ForecastExtended extends Component {
     
     updateCity = city => {
         const forecast_key = `${url_base_forecast}?q=${city}&APPID=${api_key}`;
-        fetch(forecast_key).then(
-            data => ( data.json())
-        ).then(
+        fetch(forecast_key).then(data => data.json()).then(
             weather_data => {
-                console.log(weather_data);
                 const forecastData = transformForecast(weather_data);
-                console.log(forecastData);
-                this.setState({forecastData})
+                this.setState({forecastData});
             }
         )
     }

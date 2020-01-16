@@ -1,9 +1,9 @@
-import {createStore} from 'redux';
-import {city} from './../reducers/city';
+import {createStore, applyMiddleware} from 'redux';
+import reducers from './../reducers';
+import thunk from 'redux-thunk';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 const initialState = {
-    city: null,
+    city: 'Medellin',
 };
-
-export const store = createStore(city,initialState,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+export const store = createStore(reducers,initialState,composeWithDevTools(applyMiddleware(thunk)));
